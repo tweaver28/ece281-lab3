@@ -107,7 +107,7 @@ begin
 	-- Next state logic
 	f_S_next(7) <= (f_S(7) and (not i_left) and (not i_right)) or f_S(6) or f_S(3) or f_S(0);
 	f_S_next(6) <= f_S(7) and i_left and i_right;
-	f_S_next(5) <= f_S(7) and (not i_left) and i_right;
+	f_S_next(5) <= (f_S(7) or f_S(0)) and (not i_left) and i_right;
 	f_S_next(4) <= f_S(5);
 	f_S_next(3) <= f_S(4);
 	f_S_next(2) <= f_S(7) and i_left and (not i_right);
